@@ -14,6 +14,7 @@ public class MyWorld extends JFrame{
     private JPanel panelMain;
 
     ButtonGroup g = new ButtonGroup();
+    //private boolean checkboxState = false;
     private int indexAktualniDeskovky = 0;
     EvidenceDeskovek evidenceDeskovek = new EvidenceDeskovek();
     public MyWorld() {
@@ -23,6 +24,8 @@ public class MyWorld extends JFrame{
         setContentPane(panelMain);
         predchoziBtn.addActionListener(e -> predchoziNastaveni());
         dalsiBtn.addActionListener(e -> dalsiNastaveni());
+        ulozitBtn.addActionListener(e -> ulozitNastaveni());
+        //koupenoCheckBox.setSelected(checkboxState);
         zobrazDeskovku();
         pack();
 
@@ -36,6 +39,11 @@ public class MyWorld extends JFrame{
         public void dalsiNastaveni() {
             indexAktualniDeskovky++;
             zobrazDeskovku();
+        }
+
+        public void ulozitNastaveni() {
+            //checkboxState = koupenoCheckBox.isSelected();
+            JOptionPane.showMessageDialog(this, "Údaje jsou uloženy!");
         }
 
     public void zobrazDeskovku(){
