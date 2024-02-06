@@ -43,10 +43,15 @@ public class MyWorld extends JFrame{
 
         public void ulozitNastaveni() {
             //checkboxState = koupenoCheckBox.isSelected();
-            JOptionPane.showMessageDialog(this, "Údaje jsou uloženy!");
+            for (int i = 0; i < 1; i++) {
+                JOptionPane.showMessageDialog(this, "Údaje jsou uloženy!");
+            }
         }
 
     public void zobrazDeskovku(){
+        if (indexAktualniDeskovky == 0) {
+            predchoziBtn.setEnabled(false);
+        }
         Deskovka aktualniDeskovka = evidenceDeskovek.vratDeskovku(indexAktualniDeskovky);
         textField1.setText(aktualniDeskovka.getNazevDeskovky());
         koupenoCheckBox.setSelected(aktualniDeskovka.isKoupeno());

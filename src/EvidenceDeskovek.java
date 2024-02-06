@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -6,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class EvidenceDeskovek {
+public class EvidenceDeskovek extends JFrame {
         private final ArrayList<Deskovka> seznamDeskovek = new ArrayList<>();
         public EvidenceDeskovek() {
             cteniZeSouboru();
@@ -23,6 +24,11 @@ public class EvidenceDeskovek {
                 }
             } catch (FileNotFoundException e) {
                 System.err.println("Soubor nebyl nalezen!" + e.getLocalizedMessage());
+            }
+            if (seznamDeskovek.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Seznam je prázdný!!!");
+                System.err.println("Seznam je prázdný a není co vypsat!!!");
+                System.exit(1);
             }
         }
 
