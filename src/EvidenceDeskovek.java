@@ -23,8 +23,12 @@ public class EvidenceDeskovek extends JFrame {
                     seznamDeskovek.add(new Deskovka(nazev, zakoupeno, oblibenost));
                 }
             } catch (FileNotFoundException e) {
-                System.err.println("Soubor nebyl nalezen!" + e.getLocalizedMessage());
+                System.err.println("Soubor nebyl nalezen! " + e.getLocalizedMessage());
             }
+            catch (NumberFormatException e){
+                System.err.println("Nesprávně zadaný formát! "+e.getLocalizedMessage());
+            }
+
             if (seznamDeskovek.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Seznam je prázdný!!!");
                 System.err.println("Seznam je prázdný a není co vypsat!!!");
