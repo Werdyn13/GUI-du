@@ -52,6 +52,15 @@ public class MyWorld extends JFrame{
         if (indexAktualniDeskovky == 0) {
             predchoziBtn.setEnabled(false);
         }
+        else
+        {predchoziBtn.setEnabled(true);}
+
+        if (indexAktualniDeskovky == evidenceDeskovek.getPocetDeskovek() - 1) {
+            dalsiBtn.setEnabled(false);
+        }
+        else
+        {dalsiBtn.setEnabled(true);}
+
         Deskovka aktualniDeskovka = evidenceDeskovek.vratDeskovku(indexAktualniDeskovky);
         textField1.setText(aktualniDeskovka.getNazevDeskovky());
         koupenoCheckBox.setSelected(aktualniDeskovka.isKoupeno());

@@ -36,4 +36,8 @@ public class EvidenceDeskovek extends JFrame {
         return seznamDeskovek.get(index);
     }
 
+    public int getPocetDeskovek() {
+            return seznamDeskovek.size();
+    }
+
 }
