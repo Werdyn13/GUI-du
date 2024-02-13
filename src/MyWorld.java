@@ -64,7 +64,6 @@ public class MyWorld extends JFrame{
         }
 
         private void provedUlozeni() {
-
         }
 
         public void predchoziNastaveni() {
