@@ -8,6 +8,9 @@ public class MyWorld extends JFrame{
     private JButton dalsiBtn;
     private JButton ulozitBtn;
     private JCheckBox koupenoCheckBox;
+    private JMenuBar menuBar = new JMenuBar();
+    private JMenu akceMenu = new JMenu("Akce");
+    private JMenuItem exitMenuItem = new JMenuItem("Exit");
     private JRadioButton oblibenost1;
     private JRadioButton oblibenost2;
     private JRadioButton oblibenost3;
@@ -29,7 +32,21 @@ public class MyWorld extends JFrame{
         zobrazDeskovku();
         pack();
 
+        initMenu();
+
     }
+
+        private void initMenu() {
+        exitMenuItem.addActionListener(e -> provedPozdrav());
+        akceMenu.add(exitMenuItem);
+        menuBar.add(akceMenu);
+
+        setJMenuBar(menuBar);
+        }
+
+        private void provedPozdrav() {
+        JOptionPane.showMessageDialog(this, "Ahoj!");
+        }
 
         public void predchoziNastaveni() {
             indexAktualniDeskovky--;
