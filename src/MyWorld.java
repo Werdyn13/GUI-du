@@ -9,8 +9,15 @@ public class MyWorld extends JFrame{
     private JButton ulozitBtn;
     private JCheckBox koupenoCheckBox;
     private JMenuBar menuBar = new JMenuBar();
+    private JMenu souborMenu = new JMenu("Soubor");
     private JMenu akceMenu = new JMenu("Akce");
-    private JMenuItem exitMenuItem = new JMenuItem("Exit");
+    private JMenu souhrnMenu = new JMenu("Souhrn");
+    private JMenuItem nactiMenuItem = new JMenuItem("Načti");
+    private JMenuItem ulozMenuItem = new JMenuItem("Ulož");
+    private JMenuItem pridejMenuItem = new JMenuItem("Přidej novou hru");
+    private JMenuItem odeberMenuItem = new JMenuItem("Odeber aktuální hru");
+    private JMenuItem seradMenuItem = new JMenuItem("Seřaď podle názvu");
+    private JMenuItem zobrazMenuItem = new JMenuItem("Zobrazit statistiku");
     private JRadioButton oblibenost1;
     private JRadioButton oblibenost2;
     private JRadioButton oblibenost3;
@@ -33,19 +40,31 @@ public class MyWorld extends JFrame{
         pack();
 
         initMenu();
-
+        pack();
     }
 
         private void initMenu() {
-        exitMenuItem.addActionListener(e -> provedPozdrav());
-        akceMenu.add(exitMenuItem);
+        nactiMenuItem.addActionListener(e -> provedNacteni());
+        ulozitBtn.addActionListener(e -> provedUlozeni());
+        souborMenu.add(nactiMenuItem);
+        souborMenu.add(ulozMenuItem);
+        akceMenu.add(pridejMenuItem);
+        akceMenu.add(odeberMenuItem);
+        akceMenu.add(seradMenuItem);
+        souhrnMenu.add(zobrazMenuItem);
+        menuBar.add(souborMenu);
         menuBar.add(akceMenu);
+        menuBar.add(souhrnMenu);
 
         setJMenuBar(menuBar);
         }
 
-        private void provedPozdrav() {
+        private void provedNacteni() {
         JOptionPane.showMessageDialog(this, "Ahoj!");
+        }
+
+        private void provedUlozeni() {
+
         }
 
         public void predchoziNastaveni() {
